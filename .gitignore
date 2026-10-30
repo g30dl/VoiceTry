@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Secrets: holds your OpenRouter key, never commit it
+.env
+
+# Test cache
+.pytest_cache/
+
+# Local voice experiments (the bundled reference clip lives in src/voice_chat/assets)
+voice-samples/
