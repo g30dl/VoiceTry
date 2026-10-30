@@ -13,13 +13,17 @@ answer is spoken aloud in a fixed voice.
 ## Quick path
 
 1. Install [VoiceStudio](https://github.com/debpalash/VoiceStudio/releases/latest) and **keep it open**.
-2. Install [uv](https://docs.astral.sh/uv/) (it manages Python for you).
+2. Install [uv](https://docs.astral.sh/uv/), the tool that installs this project's
+   dependencies and manages Python. Do this once per computer, either with
+   `pip install uv` (if you already have Python) or with the installer from
+   [uv's documentation](https://docs.astral.sh/uv/getting-started/installation/)
+   (no Python needed). Check it worked with `uv --version`.
 3. Get an API key at [openrouter.ai](https://openrouter.ai).
 4. Run these commands from the project folder:
 
    | Step | Linux / macOS | Windows (PowerShell) |
    |---|---|---|
-   | Install | `uv sync` | `uv sync` |
+   | Install the project's dependencies | `uv sync` | `uv sync` |
    | Add your key | `echo "OPENROUTER_API_KEY=your_key" > .env` | `Set-Content .env "OPENROUTER_API_KEY=your_key"` |
    | Create the voice | `uv run python -m voice_chat.setup_voice` | `uv run python -m voice_chat.setup_voice` |
    | Start the chat | `uv run uvicorn voice_chat.main:build_app --factory --port 8000` | same |
